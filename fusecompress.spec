@@ -44,7 +44,7 @@ BuildRequires:	liblzo-devel
 Requires:	zlib1
 BuildRequires:	zlib1-devel
 %endif
-BuildRequires:	libboost-devel, libfuse-devel, libmagic-devel
+BuildRequires:	libboost-devel, fuse-devel, libmagic-devel
 
 %description
 FuseCompress provides a mountable Linux file system which transparently compress its content.
@@ -82,7 +82,8 @@ FuseCompress currently supports these compression methods:
 %if %{build_zlib}
 	--with-z \
 %endif
-	--with-boost
+	--with-boost=%{_prefix} \
+	--with-boost-libdir=%{_libdir}
 %make
 
 %install
