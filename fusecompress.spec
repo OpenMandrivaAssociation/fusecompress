@@ -27,7 +27,7 @@ URL:		http://miio.net/wordpress/projects/fusecompress/
 # Please add comment with the right url/downloadpage.
 Source0:	http://download.github.com/tex-%{name}-%{downloadcode}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-Requires:	fuse, libboost5
+Requires:	fuse, libboost5, libmagic1
 %if %{build_bzip2}
 Requires:	libbzip2_1
 BuildRequires:	libbzip2-devel
@@ -44,7 +44,7 @@ BuildRequires:	liblzo-devel
 Requires:	zlib1
 BuildRequires:	zlib1-devel
 %endif
-BuildRequires:	libboost-devel, libfuse-devel
+BuildRequires:	libboost-devel, libfuse-devel, libmagic-devel
 
 %description
 FuseCompress provides a mountable Linux file system which transparently compress its content.
