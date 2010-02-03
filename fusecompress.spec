@@ -34,7 +34,7 @@ Requires:	libboost5
 Requires:	libboost1.38.0
 %endif
 %if %{build_bzip2}
-Requires:	libbzip2_1
+Requires:	%{_lib}bzip2_1
 BuildRequires:	libbzip2-devel
 %endif
 %if %{build_lzma}
