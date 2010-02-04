@@ -1,6 +1,6 @@
 %define	name	fusecompress
 %define	version	0.6
-%define	release	%mkrel 1.0.git.20100107.2
+%define	release	%mkrel 1.0.git.20100107.3
 %define downloadcode  754bc0d
 
 %define build_bzip2 1
@@ -28,13 +28,7 @@ URL:		http://miio.net/wordpress/projects/fusecompress/
 Source0:	http://download.github.com/tex-%{name}-%{downloadcode}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 Requires:	fuse, libmagic1
-%if %{mdkversion} >= 201000
-Requires:	libboost5
-%elseif %{mdkversion} <= 200910
-Requires:	libboost1.38.0
-%endif
 %if %{build_bzip2}
-Requires:	%{_lib}bzip2_1
 BuildRequires:	libbzip2-devel
 %endif
 %if %{build_lzma}
@@ -42,11 +36,9 @@ Requires:	xz
 BuildRequires:	liblzma-devel
 %endif
 %if %{build_lzo}
-Requires:	liblzo2_2
 BuildRequires:	liblzo-devel
 %endif
 %if %{build_zlib}
-Requires:	zlib1
 BuildRequires:	zlib1-devel
 %endif
 BuildRequires:	libboost-devel, fuse-devel, libmagic-devel
