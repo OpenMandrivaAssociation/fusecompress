@@ -1,6 +1,6 @@
 %define	name	fusecompress
 %define	version	0.6
-%define	release	%mkrel 1.0.git.20100107.3
+%define	release	%mkrel 1.0.git.20100107.4
 %define downloadcode  754bc0d
 
 %define build_bzip2 1
