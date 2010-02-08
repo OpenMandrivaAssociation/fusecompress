@@ -47,18 +47,11 @@ BuildRequires:	libboost-devel, fuse-devel, libmagic-devel
 FuseCompress provides a mountable Linux file system which transparently compress its content.
 Files stored in this file system are compressed on the fly and Fuse allows to create a transparent interface between compressed files and user applications.
 FuseCompress currently supports these compression methods:
-%if %{build_bzip2}
 - bzip2 compression
-%endif
-%if %{build_lzma}
 - lzma compression
-%endif
-%if %{build_lzo}
 - lzo2 compression
-%endif
-%if %{build_zlib}
 - zlib compression
-%endif
+- none compression
 
 %prep
 
