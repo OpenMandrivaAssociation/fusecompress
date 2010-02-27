@@ -1,6 +1,6 @@
 %define	name	fusecompress
 %define	version	0.6
-%define	release	%mkrel 1.0.git.20100107.4
+%define	release	%mkrel 1.0.git.20100107.5
 %define downloadcode  754bc0d
 
 %define build_bzip2 1
@@ -27,7 +27,7 @@ URL:		http://miio.net/wordpress/projects/fusecompress/
 # Please add comment with the right url/downloadpage.
 Source0:	http://download.github.com/tex-%{name}-%{downloadcode}.tar.gz
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-Requires:	fuse, libmagic1
+Requires:	fuse
 %if %{build_bzip2}
 BuildRequires:	libbzip2-devel
 %endif
