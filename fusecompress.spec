@@ -1,7 +1,7 @@
 %define	name	fusecompress
 %define	version	0.6
-%define	release	%mkrel 1.0.git.20100107.6
-%define downloadcode  754bc0d
+%define	release	%mkrel 1.0.git.20100822.1
+%define downloadcode  9d5137d
 
 %define build_bzip2 1
 %define build_lzma 1
@@ -87,7 +87,7 @@ rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(0644,root,root,0755)
-%doc AUTHORS COPYING README ChangeLog
+%doc AUTHORS COPYING README
 %{_mandir}/man1/%{name}*
 %defattr(0755,root,root,0755)
 %{_bindir}/*
