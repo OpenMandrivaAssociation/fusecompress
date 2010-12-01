@@ -1,6 +1,6 @@
 %define	name	fusecompress
 %define	version	0.6
-%define	release	%mkrel 1.0.git.20100822.2
+%define	release	%mkrel 1.0.git.20100822.3
 %define downloadcode  9d5137d
 
 %define build_bzip2 1
@@ -39,9 +39,9 @@ BuildRequires:	liblzma-devel
 BuildRequires:	liblzo-devel
 %endif
 %if %{build_zlib}
-BuildRequires:	zlib1-devel
+BuildRequires:	zlib-devel
 %endif
-BuildRequires:	libboost-devel, fuse-devel, libmagic-devel
+BuildRequires:	boost-devel, fuse-devel, libmagic-devel
 
 %description
 FuseCompress provides a mountable Linux file system which transparently compress its content.
