@@ -1,6 +1,6 @@
 %define	name	fusecompress
 %define	version	2.6
-%define	release	%mkrel 1.0.git.20110205.1
+%define	release	%mkrel 1.0.git.20110205.2
 # These need from git tarball.
 %define gitrel 39
 %define downloadcode  913897f
