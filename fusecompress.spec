@@ -1,6 +1,3 @@
-%define	name	fusecompress
-%define	version	2.6
-%define	release	%mkrel 1.0.git.20110205.2
 # These need from git tarball.
 %define gitrel 39
 %define downloadcode  913897f
@@ -20,16 +17,15 @@
 %{?_without_zlib: %{expand: %%global build_zlib 0}}
 
 Summary:	Provides a mountable Linux filesystem which transparently compress its content
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		fusecompress
+Version:	2.6
+Release:	1.0.git.20110205.3
 License:	GPL
 Group:		System/Kernel and hardware
 URL:		http://miio.net/wordpress/projects/fusecompress/
 # Please add comment with the right url/downloadpage.
 Source0:	http://download.github.com/tex-%{name}-%{version}-%{gitrel}-g%{downloadcode}.tar.gz
-BuildRoot:	%{_tmppath}/%{name}-buildroot
-Requires:	fuse
+
 %if %{build_bzip2}
 BuildRequires:	libbzip2-devel
 %endif
@@ -43,7 +39,10 @@ BuildRequires:	liblzo-devel
 %if %{build_zlib}
 BuildRequires:	zlib-devel
 %endif
-BuildRequires:	boost-devel, fuse-devel, libmagic-devel
+BuildRequires:	boost-devel
+BuildRequires:	fuse-devel
+BuildRequires:	libmagic-devel
+Requires:	fuse
 
 %description
 FuseCompress provides a mountable Linux file system which transparently compress its content.
@@ -56,11 +55,9 @@ FuseCompress currently supports these compression methods:
 - none compression
 
 %prep
-
 %setup -q -n tex-%{name}-%{downloadcode}
 
 %build
-
 %configure2_5x \
 %if %{build_bzip2}
 	--with-bz2 \
@@ -79,18 +76,11 @@ FuseCompress currently supports these compression methods:
 %make
 
 %install
-
-rm -rf %{buildroot}
 %makeinstall_std
 %find_lang %{name}
 
-%clean
-rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(0644,root,root,0755)
 %doc AUTHORS COPYING README
-%{_mandir}/man1/%{name}*
-%defattr(0755,root,root,0755)
 %{_bindir}/*
+%{_mandir}/man1/%{name}*
 
