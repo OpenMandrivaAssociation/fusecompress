@@ -22,7 +22,7 @@ Version:	2.6
 Release:	2.%{gitrel}.1
 License:	GPLv2
 Group:		System/Kernel and hardware
-URL:		http://miio.net/wordpress/projects/fusecompress/
+URL:		https://miio.net/wordpress/projects/fusecompress/
 # Please add comment with the right url/downloadpage.
 Source0:	http://download.github.com/tex-%{name}-%{version}-%{gitrel}-g%{downloadcode}.tar.xz
 
