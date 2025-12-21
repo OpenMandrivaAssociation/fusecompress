@@ -27,6 +27,11 @@ URL:		https://miio.net/wordpress/projects/fusecompress/
 Source0:	http://download.github.com/tex-%{name}-%{version}-%{gitrel}-g%{downloadcode}.tar.xz
 
 %if %{build_bzip2}
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	bzip2-devel
 %endif
 %if %{build_lzma}
